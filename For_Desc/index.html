@@ -1,0 +1,1678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Eco Energy IDC</title>
+   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Tailwind Css  -->
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- External JS dependencies -->
+  <script type="text/javascript" src="assets/js/jquery-2.0.3.min.js"></script>
+  <script type="text/javascript" src="assets/js/underscore-min.js"></script>
+  <script type="text/javascript" src="assets/js/backbone-min.js"></script>
+
+
+<!-- papa parse for data fetch from excel -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+  <!-- Turn.js UI Kit -->
+  <script type="text/javascript" src="assets/js/turn.min.js"></script>
+
+  <!-- App dependencies -->
+  <script type="text/javascript" src="assets/js/app.js"></script>
+
+
+  <!-- External CSS dependencies -->
+  <link type="text/css" rel="stylesheet" href="assets/css/font-awesome.min.css">
+  </link>
+
+
+  <!-- App CSS dependencies -->
+  <link type="text/css" rel="stylesheet" href="./assets/css/main.css">
+  </link>
+
+  <!--  CSS dependencies -->
+  <link type="text/css" rel="stylesheet" href="./assets/css/lightbox.css">
+  </link>
+
+
+  <!------ Fontawesome link  ------->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tilt+Neon&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/cataloguemain.css">
+
+  <!-- Favicon icon -->
+  <link rel="icon" href="../global assets/Images/logo.svg" type="image/x-icon">
+
+  <!-- Fontawesome icon  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="main.css">
+
+  <style type="text/css">
+    .page-1 .s1 {
+      -webkit-transform: translateY(100px);
+      -webkit-transition: all 1.5s;
+      opacity: 0;
+    }
+
+    .page-1 .s2 {
+      -webkit-transform: translateY(100px);
+      -webkit-transition: all 1s;
+      -webkit-transition-delay: 0.5s;
+      opacity: 0;
+      font-family: 'Carrois Gothic SC', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 40px;
+      text-align: center;
+      color: white;
+    }
+
+    .page-1.animation-on .s1 {
+      -webkit-transform: translateY(0px);
+      opacity: 1;
+    }
+
+    .page-1.animation-on .s2 {
+      -webkit-transform: translateY(0px);
+      opacity: 1;
+    }
+  </style>
+
+
+<style>
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #333;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 8px 8px 8px 32px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+        .midsec img {
+            width: 77%;
+            object-fit: contain;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            /* background: white; */
+            border-top: 2px solid #e0e0e0;
+        }
+
+
+        .image-counter {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            min-width: 100px;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 1275px) and (max-height: 600px) {
+    .catalog-app {
+        height: 97% !important;
+    }
+}
+
+/* Alternative: Hide only on mobile screens */
+@media screen and (max-width: 768px) {
+    .hide-mobile {
+        display: none !important;
+    }
+    .hide-mobile {
+  background: red !important;
+}
+.hide-mobile {
+  border: 5px solid red;
+}
+}
+</style>
+</head>
+
+<body>
+
+
+  <!-- ***************************************************** DC started *************************************************-->
+
+<div class="catalog-app "
+>
+
+  <div class="absolute hidden top-0 left-0 w-[100%] h-[5%] bg-[#D9D9D9] cursor-pointer" id="navContainerMain" style="z-index: 999999999999999;">
+      <div
+        class="absolute top-[50%] left-[2%] cursor-pointer hover:bg-gray-100 z-[910] rounded-md transition-colors duration-200"
+        style="transform: translateY(-50%);">
+        <img src="../global assets/icons/tabel-of-content-icon.svg" alt="table-of-content-icon" id="navToggle"
+          class="sm:w-[7vw] md:w-[5vw] lg:w-[1.5vw] cursor-pointer" />
+      </div>
+
+<img src="../global assets/bottom-navbar/foundation_thumbnails.svg" alt="foundation_thumbnails" id="navToggle1" class="absolute top-[50%] left-[4.5%] w-[1.5vw] cursor-pointer z-[910] hover:opacity-80 transition-opacity" style="transform: translateY(-50%);"/>
+<!-- ********************************Audio button start****************************************  -->
+<!-- <div class="bgm-container absolute top-[58%] right-[5.5%] cursor-pointer  z-[910]" style="transform: translateY(-50%);">
+        <audio id="bgmAudio" loop>
+          <source src="../audios/Hope-Emotional-Soundtrack(chosic.com).mp3" type="audio/wav">
+        </audio>
+        <button id="bgmButton" class="bgm-toggle cursor-pointer"> 
+          <img id="musicOnImg" src="../global assets/icons/music-on-icon.svg" class="w-[1.8vw] h-[1.8vw]">
+    <img id="musicOffImg" src="../global assets/icons/music-off-icon.svg" class="w-[1.5vw] h-[1.5vw] hidden"></button>
+      </div> -->
+
+
+<!-- ********************************Audio button end****************************************  -->
+
+
+
+
+<img src="../global assets/icons/share-icon.svg" alt="share-icon" id="shareBn" class="absolute top-[50%] right-[3.3%] cursor-pointer w-[1.2vw]   z-[910]" style="transform: translateY(-50%);"/>
+<img src="../global assets/icons/download-icon.svg" alt="download-icon" id="download-tn" class="absolute top-[50%] right-[1%] cursor-pointer w-[1.5vw]   z-[910]" style="transform: translateY(-50%);"/>
+
+<img src="../global assets/icons/search-icon.svg" id="searchIconDesktop" alt="search-icon" class="absolute top-[50%] left-[7%] w-[1.5vw]  z-[1000] cursor-pointer" style="transform: translateY(-50%);"/>
+
+
+
+
+<div>
+        <!-- <img  
+          src="../global assets/Images/TableOfContent/home-icon.svg" alt="home-icon" class="home-button " /> -->
+          <p id="goToPage1" data-audio-path="../audios/home.mp3" data-page="1" class="absolute top-[50%] left-[50%] w-[3vw] font-semibold" style="transform: translate(-50%, -50%) ;" ><img src="../global assets/Images/logo.svg"/></p>
+      </div>
+
+
+      <img src="../global assets/icons/doted-icon.svg" alt="foundation_thumbnails" id="navMenuBarMobile"
+        class=""
+        style="transform: translateY(-50%);" />
+</div>
+
+<!-- Add this right after the opening <div class="catalog-app"> tag -->
+<div id="topIconNav" class="top-icon-navigation">
+  <!-- Table of Contents -->
+  <button class="icon-btn" id="iconTOC" title="Table of Contents">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+
+
+  <!-- Audio Toggle -->
+  <button class="icon-btn bgm-toggle" id="bgmButton" title="Audio">
+      
+ <audio id="bgmAudio" loop>
+          <source src="../audios/Beloved(chosic.com).mp3" type="audio/wav">
+        </audio>
+    <img id="musicOnImg" src="../global assets/icons/music-on-icon.svg" class="w-[1.8vw] h-[1.8vw]">
+    <img id="musicOffImg" src="../global assets/icons/music-off-icon.svg" class="w-[1.5vw] h-[1.5vw] hidden">
+  
+  </button>
+
+  <!-- Zoom Out -->
+  <button class="icon-btn" id="iconZoomOut" title="Zoom Out" >
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="11" cy="11" r="8"/>
+      <line x1="7" y1="11" x2="15" y2="11"/>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </svg>
+  </button>
+
+  <!-- Zoom In -->
+  <button class="icon-btn" id="iconZoomIn" title="Zoom In">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="11" cy="11" r="8"/>
+      <line x1="11" y1="7" x2="11" y2="15"/>
+      <line x1="7" y1="11" x2="15" y2="11"/>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </svg>
+  </button>
+
+  <!-- front Page -->
+  <button class="icon-btn" id="iconFrontPage" title="Front Page" disabled>
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <polygon points="19 4 9 12 19 20 19 4"/>
+  <line x1="5" y1="5" x2="5" y2="19"/>
+</svg>
+  </button>
+
+  <!-- Previous Page -->
+  <button class="icon-btn" id="iconPrevPage" title="Previous Page" disabled>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="15 18 9 12 15 6"/>
+    </svg>
+  </button>
+
+  <!-- Next Page -->
+  <button class="icon-btn" id="iconNextPage" title="Next Page">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="9 18 15 12 9 6"/>
+    </svg>
+  </button>
+
+  <!-- Skip Forward -->
+  <button class="icon-btn" id="iconSkipForward" title="Skip Forward">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polygon points="5 4 15 12 5 20 5 4"/>
+      <line x1="19" y1="5" x2="19" y2="19"/>
+    </svg>
+  </button>
+
+
+
+  <!-- Text Tool -->
+  <button class="icon-btn" id="iconText" title="Text Tool">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="11" cy="11" r="8"></circle>
+  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+</svg>
+
+  </button>
+
+  <!-- share icon  -->
+
+  <button class="icon-btn" id="shareBtn" title="Text Tool">
+
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="18" cy="5" r="3"/>
+      <circle cx="6" cy="12" r="3"/>
+      <circle cx="18" cy="19" r="3"/>
+      <line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/>
+      <line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/>
+    </svg>
+</button>
+
+<!-- download icon  -->
+ <button class="icon-btn" id="download-btn" title="Text Tool">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 3v12"/>
+      <polyline points="7 10 12 15 17 10"/>
+      <rect x="4" y="19" width="16" height="2"/>
+    </svg>
+ </button>
+
+
+
+  <!-- Fullscreen -->
+  <button class="icon-btn full-screen " id="full-screen-btn" title="Fullscreen">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+    </svg>
+  </button>
+</div>
+
+
+<!-- <img src="../global assets/icons/full-screen-icon.svg" alt="full-screen-icon" id="full-screen-bt" class="absolute bottom-[0%] right-[2%] cursor-pointer w-[2vw] h-[2vw] full-screen  z-[910]" style="transform: translateY(-50%);"/> -->
+
+
+
+
+<!-- Zoom Control Widget -->
+<div class="zoom-control-container hidden bottom-[-50%] right-[5%]  z-[910] " >
+    <button id="zoomOutBtn" class="zoom-btn " title="Zoom Out">
+        
+        <img src="../global assets/icons/zoom-out-icon.svg" title="zoom out" class="w-[1.5vw]"/>
+    </button>
+    
+    <input type="range" id="zoomSlider" min="50" max="150" value="100" step="10" class="zoom-slider hidden" />
+     <span id="zoomPercentage" class="zoom-percentage">100%</span>
+    <button id="zoomInBtn" class="zoom-btn" title="Zoom In">
+       
+        <img src="../global assets/icons/zoom-in-icon.svg" title="zoom in" class="w-[1.5vw]"/>
+    </button>
+    
+   
+</div>
+
+
+
+<!-- <div class="absolute bottom-[1%] left-[2%] font-inter font-small text text-black text-[1vw]  z-[91] page-no" style="transform: translateY(-50%);">
+  <p>Page <span id="page-no"></span></p>
+</div> -->
+
+<!-- Page Controller -->
+<div class="page-controller">
+  <span class="page-label">Page</span>
+
+  <input
+    type="number"
+    id="pageInput"
+    min="1"
+    value="1"
+  />
+
+  <span class="divider">/</span>
+
+  <strong id="totalPages">0</strong>
+
+  <button id="goPageBtn" class="go-btn">Go</button>
+</div>
+
+
+    <div id="viewer">
+
+
+
+      <audio id="navAudio"></audio>
+     
+
+      
+
+
+   
+
+<!-- ***********************************************Bottom Functionality code******************************************************** -->
+
+
+ <div id="navOverlay" class="nav-overlay"></div>
+      
+      <nav id="tocNav" class="toc-floating " aria-label="Table of Contents">
+        <div class="toc-title">Table of contents</div>
+        <ul class="toc-list">
+          <li class="tb-link cursor-pointer" data-page="1" data-audio-path=""><a> Home </a></li>
+          <li class="tb-link cursor-pointer" data-page="2" data-audio-path=""><a>About us</a></li>
+          <li class="tb-link cursor-pointer" data-page="3" data-audio-path=""><a> Products </a>
+          </li>
+          <li class="tb-link cursor-pointer " data-page="4" data-audio-path="" style="margin-left: 2vw;"><a>  </a>
+          </li>
+          <li class="tb-link cursor-pointer" data-page="6" data-audio-path="" style="margin-left: 2vw;"><a>  </a>
+          </li>
+          <li class="tb-link cursor-pointer" data-page="8" data-audio-path="" style="margin-left: 2vw;"><a>  </a>
+          </li>
+          <li class="tb-link cursor-pointer" data-page="10" data-audio-path="" style="margin-left: 2vw;"><a>  </a>
+          </li>
+          <li class="tb-link cursor-pointer" data-page="12" data-audio-path="" style="margin-left: 2vw;"><a>  </a>
+          </li>
+          <li class="tb-link cursor-pointer" data-page="14" data-audio-path="" style="margin-left: 2vw;"><a>  </a>
+          </li>
+          <li class="tb-link cursor-pointer" data-page="16" data-audio-path="" style="margin-left: 2vw;"><a>  </a>
+          </li>
+
+          <li class="tb-link cursor-pointer" data-page="18" data-audio-path=""><a> Contact Us
+            </a></li>
+        </ul>
+      </nav>
+
+
+ <div id="navOverlay1" class="nav-overlay1"></div>
+      
+      <nav id="tocNav1" class="toc-floating1 " aria-label="Table of Contents">
+       
+        <ul class="toc-list1 flex gap-[1vw] ">
+          <li class="tb-link cursor-pointer pb-[.5vw]" data-page="1" ><a class="w-[5.2vw] h-[7vw]"><img src="../global assets/Images/Thumbnail-Images/page-1.web" class="mb-[.5vw]" /><p class="text-[.7vw] text-center mt-[.2vw] text-white">page 1</p></a></li>
+          <li class="tb-link cursor-pointer pb-[.5vw]" data-page="2" ><a class="w-[10vw] h-[7vw]"><img src="../global assets/Images/Thumbnail-Images/page-2-3.web"  class="mb-[.5vw]"/><p class="text-[.7vw] text-center mt-[.2vw] text-white">page 2-3</p> </a></li>
+          <li class="tb-link cursor-pointer pb-[.5vw]" data-page="4" ><a class="w-[10vw] h-[7vw]"> <img src="../global assets/Images/Thumbnail-Images/page-4-5.web" class="mb-[.5vw]" /><p class="text-[.7vw] text-center mt-[.2vw] text-white">page 4-5</p></a></li>
+          <li class="tb-link cursor-pointer pb-[.5vw]" data-page="6" ><a class="w-[10vw] h-[7vw]"> <img src="../global assets/Images/Thumbnail-Images/page-6-7.web"  class="mb-[.5vw]"/><p class="text-[.7vw] text-center mt-[.2vw] text-white">page 6-7</p></a></li>
+          <li class="tb-link cursor-pointer pb-[.5vw]" data-page="8" ><a class="w-[10vw] h-[7vw]"> <img src="../global assets/Images/Thumbnail-Images/page-8-9.web" class="mb-[.5vw]"/><p class="text-[.7vw] text-center mt-[.2vw] text-white">page 8-9</p></a></li>
+          <li class="tb-link cursor-pointer pb-[.5vw]" data-page="10" ><a class="w-[10vw] h-[7vw]"> <img src="../global assets/Images/Thumbnail-Images/page-10-11.web" class="mb-[.5vw]" /><p class="text-[.7vw] text-center mt-[.2vw] text-white">page 10-11</p></a></li>
+          <li class="tb-link cursor-pointer pb-[.5vw]" data-page="12" ><a class="w-[10vw] h-[7vw]"> <img src="../global assets/Images/Thumbnail-Images/page-12-13.web"  class="mb-[.5vw]"/><p class="text-[.7vw] text-center mt-[.2vw] text-white">page 12-13</p></a></li>
+          <li class="tb-link cursor-pointer pb-[.5vw]" data-page="14" ><a class="w-[10vw] h-[7vw]"> <img src="../global assets/Images/Thumbnail-Images/page-14-15.web" class="mb-[.5vw]"/><p class="text-[.7vw] text-center mt-[.2vw] text-white">page 14-15</p></a></li>
+          <li class="tb-link cursor-pointer pb-[.5vw]" data-page="16" ><a class="w-[10vw] h-[7vw]"> <img src="../global assets/Images/Thumbnail-Images/page-16-17.web" class="mb-[.5vw]"/><p class="text-[.7vw] text-center mt-[.2vw] text-white">page 16-17</p></a></li>
+          <li class="tb-link cursor-pointer pb-[.5vw]" data-page="18" ><a class="w-[5.2vw] h-[7vw]"> <img src="../global assets/Images/Thumbnail-Images/page-18.web" class="mb-[.5vw]" /><p class="text-[.7vw] text-center mt-[.2vw] text-white">page 18</p></a></li>
+
+        </ul>
+      </nav>
+
+         <!-- *************************share button navbar start**************************  -->
+
+
+
+    <!-- Overlay -->
+<div id="shareOverlay" 
+     class="hidden fixed inset-0 bg-gray-900/40 backdrop-gray-200 z-[1111111111] animate-fade-in">
+</div>
+
+
+<!-- Share Modal -->
+<div id="shareModal" class="hidden fixed w-[92vw] max-w-[32vw] bg-gradient-to-br from-emerald-50 to-green-100 rounded-[1.5vw] shadow-2xl z-[1111111111] overflow-hidden border border-green-200" style="top: 50%; left: 50%; transform: translate(-50%,-50%);">
+    
+    <!-- Decorative Top Bar -->
+    <div class="h-[0.4vw] bg-gradient-to-r from-teal-500 via-teal-500 to-teal-500"></div>
+    
+    <!-- Header -->
+    <div class="flex justify-between items-center px-[1.5vw] py-[1vw]">
+        <div class="flex items-center gap-[0.5vw]">
+            <div class="w-[2vw] h-[2vw] bg-gradient-to-br from-teal-500 to-teal-500  rounded-full flex items-center justify-center shadow-lg">
+                <svg class="w-[1vw] h-[1vw] text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+                </svg>
+            </div>
+            <h2 class="text-[1.1vw] font-bold bg-gradient-to-r from-teal-500 to-teal-500 bg-clip-text text-transparent">Spread the Word</h2>
+        </div>
+        <button id="closeBtn" class="w-[1.8vw] h-[1.8vw] flex items-center justify-center rounded-full bg-white hover:bg-red-50 text-gray-400 hover:text-red-500 transition-all duration-300 shadow-sm hover:shadow-md hover:rotate-90 cursor-pointer">
+            <svg class="w-[0.8vw] h-[0.8vw]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Content -->
+    <div class="px-[1.5vw] pb-[1.5vw]">
+        
+        <!-- Link Section -->
+        <div class="bg-white rounded-[1vw] p-[1vw] shadow-sm border border-green-100 mb-[1vw]">
+            <label class="text-[0.7vw] font-semibold text-teal-600 uppercase tracking-wider mb-[0.5vw] block">🔗 Shareable Link</label>
+            <div class="flex gap-[0.8vw]">
+                <div class="flex-1 relative">
+                    <input
+                        id="shareInput"
+                        type="text"
+                        readonly
+                        class="w-full h-[2.5vw] px-[1vw] border-2 border-green-200 rounded-[0.6vw] text-[0.75vw] font-mono bg-green-50/50 focus:bg-white focus:border-emerald-500 focus:outline-none transition-all duration-300 text-gray-700"
+                        placeholder="Your link will appear here..."
+                    />
+                </div>
+                <div class="relative">
+                    <button
+                        id="copyBtn"
+                        class="h-[2.5vw] px-[1.5vw] flex items-center gap-[0.4vw] bg-gradient-to-r from-teal-600 to-teal-600 hover:from-teal-700 hover:to-teal-700 text-white rounded-[0.6vw] text-[0.75vw] font-bold transition-all duration-300 active:scale-95 shadow-lg hover:shadow-xl cursor-pointer group"
+                    >
+                        <svg class="w-[1vw] h-[1vw] group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                        </svg>
+                        Copy Link
+                    </button>
+                    <span id="copiedMsg" class="hidden absolute -top-[2.5vw] left-1/2 -translate-x-1/2 bg-emerald-600 text-white px-[1vw] py-[0.4vw] rounded-[0.4vw] text-[0.7vw] font-semibold whitespace-nowrap shadow-lg animate-bounce">
+                        ✓ Got it!
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Share Section -->
+        <div class="bg-white rounded-[1vw] p-[1vw] shadow-sm border border-green-100">
+            <span class="text-[0.7vw] font-semibold text-teal-600 uppercase tracking-wider mb-[0.8vw] block">
+                 Share Via
+            </span>
+            <div class="flex gap-[0.8vw]">
+                <!-- WhatsApp -->
+                <button id="whatsappBtn" class="group flex-1 h-[3vw] flex flex-col items-center justify-center bg-gradient-to-br from-green-50 to-green-100 hover:from-green-500 hover:to-green-600 border-2 border-green-200 hover:border-green-500 rounded-[0.8vw] transition-all duration-300 hover:shadow-lg hover:-translate-y-[0.2vw] cursor-pointer" title="WhatsApp">
+                    <img src="../global assets/icons/whatsapp-icon.svg" alt="whatsapp" class="w-[1.2vw] h-[1.2vw] group-hover:scale-110 transition-transform"/>
+                    <span class="text-[0.5vw] font-medium text-green-700 group-hover:text-white mt-[0.2vw]">WhatsApp</span>
+                </button>
+
+                <!-- Twitter -->
+                <button id="twitterBtn" class="group flex-1 h-[3vw] flex flex-col items-center justify-center bg-gradient-to-br from-sky-50 to-sky-100 hover:from-sky-500 hover:to-sky-600 border-2 border-sky-200 hover:border-sky-500 rounded-[0.8vw] transition-all duration-300 hover:shadow-lg hover:-translate-y-[0.2vw] cursor-pointer" title="Twitter">
+                    <img src="../global assets/icons/twitter-icon.svg" alt="twitter" class="w-[1.2vw] h-[1.2vw] group-hover:scale-110 transition-transform"/>
+                    <span class="text-[0.5vw] font-medium text-sky-700 group-hover:text-white mt-[0.2vw]">Twitter</span>
+                </button>
+
+                <!-- Facebook -->
+                <button id="facebookBtn" class="group flex-1 h-[3vw] flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 hover:from-blue-600 hover:to-blue-700 border-2 border-blue-200 hover:border-blue-600 rounded-[0.8vw] transition-all duration-300 hover:shadow-lg hover:-translate-y-[0.2vw] cursor-pointer" title="Facebook">
+                    <img src="../global assets/icons/facebook-icon.svg" alt="facebook" class="w-[1.2vw] h-[1.2vw] group-hover:scale-110 transition-transform"/>
+                    <span class="text-[0.5vw] font-medium text-blue-700 group-hover:text-white mt-[0.2vw]">Facebook</span>
+                </button>
+
+                <!-- LinkedIn -->
+                <button id="linkedInBtn" class="group flex-1 h-[3vw] flex flex-col items-center justify-center bg-gradient-to-br from-indigo-50 to-indigo-100 hover:from-indigo-600 hover:to-indigo-700 border-2 border-indigo-200 hover:border-indigo-600 rounded-[0.8vw] transition-all duration-300 hover:shadow-lg hover:-translate-y-[0.2vw] cursor-pointer" title="LinkedIn">
+                    <img src="../global assets/icons/linked-in-icon.svg" alt="linkedin" class="w-[1.2vw] h-[1.2vw] group-hover:scale-110 transition-transform"/>
+                    <span class="text-[0.5vw] font-medium text-indigo-700 group-hover:text-white mt-[0.2vw]">LinkedIn</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bottom Decorative Element -->
+    <div class="absolute bottom-0 left-0 right-0 h-[0.2vw] bg-gradient-to-r from-transparent via-green-400 to-transparent opacity-50"></div>
+</div>
+
+<!-- Backdrop (optional - add for better UX) -->
+<div id="modalBackdrop" class="hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-[1111111110]"></div>
+
+<style>
+    /* Custom Animations */
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translate(-50%, -45%);
+        }
+        to {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+        }
+    }
+    
+    @keyframes pulse-green {
+        0%, 100% {
+            box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+        }
+        50% {
+            box-shadow: 0 0 0 0.5vw rgba(16, 185, 129, 0);
+        }
+    }
+    
+    #shareModal:not(.hidden) {
+        animation: slideUp 0.3s ease-out forwards;
+    }
+    
+    #copyBtn:hover {
+        animation: pulse-green 1.5s infinite;
+    }
+</style>
+
+<!-- *************************share button navbar end**************************  -->
+
+
+<!-- ***********************************download start*********************************** -->
+
+
+  <div id="downloadPopup"
+  class="
+    hidden
+    fixed
+    top-[5.5%] right-[1%]
+    bg-teal-600 text-white
+    px-4 py-3
+    rounded-full shadow-lg
+    z-[9999]
+    text-sm
+    opacity-0 transition-opacity duration-300
+
+    w-[50vw] right-[5%] top-[10%]        /* mobile */
+    md:w-[15vw] md:right-[1%] md:top-[5.5%]  /* tablet+ */
+  ">
+  Download in progress...
+</div>
+
+
+
+<!-- ***********************************download end*********************************** -->
+
+<div id="navMobileOverlay" class="nav-mobile-overlay">
+  <div class="nav-mobile-overlay__backdrop"></div>
+
+  <div class="nav-mobile-overlay__panel">
+   
+
+    <!-- Share -->
+    <img src="../global assets/icons/share-icon.svg"
+         alt="Share"
+         id="navMobileShareIcon"
+         class="nav-mobile-icon nav-mobile-icon--share" />
+
+    <!-- Download -->
+    <img src="../global assets/icons/download-icon.svg"
+         alt="Download"
+         id="navMobileDownloadIcon"
+         class="nav-mobile-icon nav-mobile-icon--download" />
+
+    <!-- Audio -->
+    <img src="../global assets/icons/music-on-icon.svg"
+         alt="Audio"
+         id="navMobileAudioIcon"
+         class="nav-mobile-icon nav-mobile-icon--audio" />
+  </div>
+</div>
+
+
+      <!-- ******************************************************************************************************* -->
+
+<!-- Overlay -->
+<div
+  id="shareOverlayMobile"
+  class="hidden fixed inset-0 bg-black/40 z-[1111111100]"
+></div>
+
+<!-- Share Modal -->
+<div
+  id="shareModalMobile"
+  class="
+    hidden fixed
+    top-[10%] right-4
+    w-[92vw] max-w-md
+    bg-white rounded-xl shadow-2xl
+    z-[1111111111]
+    animate-slide-up
+
+    md:top-[5.5%] md:right-[2%]
+    md:w-[90vw] md:max-w-[30vw]
+  "
+>
+  <!-- Header -->
+  <div class="flex justify-between items-center px-4 py-3 border-b border-gray-200">
+    <h2 class="text-sm font-semibold text-black">Share</h2>
+    <button
+      id="shareCloseBtnMobile"
+      class="text-base text-gray-600 hover:text-gray-900 cursor-pointer"
+    >
+      ✕
+    </button>
+  </div>
+
+  <!-- Content -->
+  <div class="px-4 py-3">
+    <!-- Link Section -->
+    <div class="flex flex-col gap-3 md:flex-row md:items-center">
+      <input
+        id="shareInputMobile"
+        type="text"
+        readonly
+        class="w-full h-10 px-3 border border-gray-300 rounded-lg text-sm font-mono bg-gray-50 focus:outline-none"
+      />
+
+      <div class="relative w-full md:w-auto">
+        <button
+          id="copyBtnMobile"
+          class="w-full md:w-auto px-4 py-2 flex items-center justify-center gap-2 bg-[#4A3AFF] hover:bg-blue-600 text-white rounded-lg text-sm font-semibold transition active:scale-95"
+        >
+          <img src="../global assets/icons/copy-link-icon.svg" class="w-4" />
+          Copy Link
+        </button>
+
+        <span
+          id="copiedMsgMobile"
+          class="hidden absolute -top-10 right-0 bg-gray-900 text-white px-3 py-2 rounded-md text-xs whitespace-nowrap"
+        >
+          Copied!
+        </span>
+      </div>
+    </div>
+
+    <!-- Share Through -->
+    <div class="border-t border-gray-200 mt-4 pt-4">
+      <span class="block text-sm font-semibold text-black mb-3">
+        Share Through
+      </span>
+
+      <div class="grid grid-cols-4 gap-3 md:grid-cols-6 w-[60%]">
+        <button id="waShareMobile" class="shareIconBtn" title="WhatsApp">
+          <img src="../global assets/icons/whatsapp-icon.svg" />
+        </button>
+
+        <button id="twShareMobile" class="shareIconBtn" title="Twitter">
+          <img src="../global assets/icons/twitter-icon.svg" />
+        </button>
+
+        <button id="fbShareMobile" class="shareIconBtn" title="Facebook">
+          <img src="../global assets/icons/facebook-icon.svg" />
+        </button>
+
+        <button id="lnShareMobile" class="shareIconBtn" title="LinkedIn">
+          <img src="../global assets/icons/linked-in-icon.svg" />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+ <div class="flipbook-scroll-wrapper" >
+
+    <div id="flipbook" class="ui-flipbook">
+
+
+<!-- *********************************About us page start****************************** -->
+
+<div class="page">
+
+        <img src="../global assets/Images/AboutusPage/background-img.webp" alt="background" class="absolute top-0 left-0 w-[100%] h-[100%]"/>
+        <img src="../global assets/Images/commonThings/right-page-shadow.svg" alt="shadow" class="absolute top-0 left-0 h-[100%]" />      
+        <img src="../global assets/Images/AboutusPage/logo.svg" alt="logo" class="absolute top-[3%] w-[12%] left-[5%] "/>
+        <img src="../global assets/Images/AboutusPage/about-us.svg" alt="about-us" class="absolute top-[5%] w-[25%] left-[37.5%] "/>
+        <img src="../global assets/Images/AboutusPage/container-img.webp" alt="container-img" class="absolute top-[10%] w-[94%] left-[3%] "/>
+        <img src="../global assets/Images/AboutusPage/sustainable-food-packing-built-for-modern-brands.svg" alt="about-us" class="absolute top-[45%] w-[70%] left-[15%] "/>
+        <img src="../global assets/Images/AboutusPage/about-us-content.svg" alt="about-us-content" class="absolute top-[55%] w-[88%] left-[6%] "/>
+        <img src="../global assets/Images/AboutusPage/left-points.svg" alt="about-us" class="absolute top-[70%] w-[40%] left-[5%] "/>
+        <img src="../global assets/Images/AboutusPage/why-brands-choose-eco-energy.svg" alt="about-us" class="absolute top-[70%] w-[50%] right-[3%] "/>
+        <img src="../global assets/Images/AboutusPage/Packing-that-Protects-Food-Packaging-that-Protects-Nature..svg" alt="about-us" class="absolute top-[93%] w-[65%] left-[5%] "/>
+        <img src="../global assets/Images/AboutusPage/bottom-leaf.webp" alt="about-us" class="absolute bottom-[0%] w-[30%] right-[0%] "/>
+       
+
+</div>
+
+<!-- *********************************About us page end****************************** -->
+
+
+
+<!-- *********************************Contact us page start****************************** -->
+<div class="page contact-us">
+        <img src="../global assets/Images/ContactUs/left-img.webp" alt="background" class="absolute top-0 left-0 h-[100%]"/>
+        <img src="../global assets/Images/ContactUs/food-img.webp" alt="food-img" class="absolute top-0 right-0 h-[100%]"/>
+        <img src="../global assets/Images/commonThings/left-page-shadow.svg" alt="shadow" class="absolute top-0 right-0 h-[100%]" />      
+
+        <img src="../global assets/Images/ContactUs/logo.svg" alt="logo" class="absolute top-[3%] w-[20%] left-[40%] "/>
+        <img src="../global assets/Images/ContactUs/lets-talk.svg" alt="lets-talk" class="absolute top-[17%] w-[50%] left-[8%] "/>
+
+        <a href="tel:+9199944552130"><img src="../global assets/Images/ContactUs/phone-icon.svg" alt="phone-icon" class="absolute w-[5%]  top-[35.5%] left-[7%] contact-link"/></a>
+        <a href="tel:+9199944552130"><img src="../global assets/Images/ContactUs/call-us.svg" alt="call us" class="absolute  w-[9%] top-[36%] left-[15%] contact-link"/></a>
+        <a href="tel:+9199944552130"><img src="../global assets/Images/ContactUs/99944552130.svg" alt="99944552130" class="absolute  w-[20.5%] top-[39.5%] left-[15%] contact-link"/></a>
+        <a href="tel:+9199962474001"><img src="../global assets/Images/ContactUs/99962474001.svg" alt="99962474001" class="absolute  w-[20.5%] top-[42.5%] left-[15%] contact-link"/></a>
+        <a href="tel:+917708242130"><img src="../global assets/Images/ContactUs/7708242130.svg" alt="7708242130" class="absolute  w-[18.5%] top-[45.5%] left-[15%] contact-link"/></a>
+        <img src="../global assets/Images/ContactUs/location-icon.svg" alt="location icon" id="location-1" class="absolute w-[4.5%]  top-[49.5%] left-[7%] cursor-pointer contact-link"/>
+        <img src="../global assets/Images/ContactUs/visit-us.svg" alt="visit us" id="location-2" class="absolute  w-[10%] top-[50%] left-[15%] cursor-pointer contact-link"/>
+        <img src="../global assets/Images/ContactUs/location.svg" alt="location" id="location-3" class="absolute  w-[35%] top-[53.5%] left-[15%] cursor-pointer contact-link"/>
+        <a href="mailto:vinoth@adecoenergy.in"><img src="../global assets/Images/ContactUs/email-icon.svg" alt="email icon" class="absolute w-[4.5%]  top-[59.5%] left-[7%] contact-link"/></a>
+        <a href="mailto:vinoth@adecoenergy.in"><img src="../global assets/Images/ContactUs/email-us.svg" alt="email us" class="absolute  w-[10%] top-[60%] left-[15%] contact-link"/></a>
+        <a href="mailto:vinoth@adecoenergy.in"><img src="../global assets/Images/ContactUs/email-link.svg" alt="email id" class="absolute  w-[25%] top-[62.5%] left-[15%] contact-link"/></a>
+        <img src="../global assets/Images/ContactUs/get-a-packing-consultation.svg" alt="get a get-a-packing-consultation" class="absolute  w-[42%] top-[67%] left-[7%] "/>
+        <img src="../global assets/Images/ContactUs/QR-code.svg" alt="QR-code" class="absolute w-[14%] top-[75%] left-[7%] "/>
+         <a href="https://www.adecoenergy.in/" target="_blank"><img src="../global assets/Images/ContactUs/explore-our-packing-solutions.svg" alt="explore-our-packing-solutions" class="absolute  w-[20%] top-[76%] left-[23%] contact-link"/></a>
+        <a href="https://www.adecoenergy.in/" target="_blank"><img src="../global assets/Images/ContactUs/www.adecoenergy.in.svg" alt="www.adecoenergy.in" class="absolute  w-[23%] top-[82%] left-[23%] contact-link"/></a>
+
+
+
+</div>
+<!-- *********************************Contact us page end****************************** -->
+
+
+
+
+
+
+        <a ignore="1" class="ui-arrow-control ui-arrow-next-page next-arrow" >
+          <img src="../global assets/icons/next-page-icon.svg" class="z-1111"/>
+        </a>
+        <a ignore="1" class="ui-arrow-control ui-arrow-previous-page prev-arrow">
+          <img src="../global assets/icons/previous-page.svg" class="1111"/>
+        </a>
+
+
+   
+      </div>
+ </div>
+
+
+
+    
+    </div>
+
+
+
+
+
+    <audio id="flipaudio" src="./pageflip.mp3"></audio>
+
+    <!-- controls -->
+    <div id="controls">
+      <div class="all">
+
+
+        <!-- zoom slider -->
+        <div id="zoom-slider-view" class="zoom-slider">
+          <div class="bg">
+            <div class="ui-slider" id="zoom-slider">
+              <div class="bar">
+                <div class="progress-width">
+                  <div class="progress">
+                    <div class="handler"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- / zoom slider -->
+      </div>
+
+      <div id="ui-icon-expand-options">
+        <a class="ui-icon show-hint">
+          <i class="fa fa-ellipsis-h"></i>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- / controls -->
+
+    <!-- miniatures -->
+    <div id="miniatures" class="ui-miniatures-slider">
+    </div>
+
+    <!-- / miniatures -->
+
+
+
+
+<!-- Search Modal Overlay -->
+<!-- <div id="searchOverlay" class="fixed inset-0  bg-opacity-50 z-[999] hidden transition-opacity duration-300"></div> -->
+
+<!-- Search Modal -->
+<!-- Search Modal -->
+<!-- Search Modal - Green/White/Teal Theme -->
+<div id="searchModal" class="fixed top-[2%] left-[2%] bg-gradient-to-b from-teal-600 via-teal-600 to-teal-700 z-[100000000000] hidden w-[18vw] h-[20%] rounded-lg shadow-2xl overflow-hidden">
+    
+    <!-- Decorative Pattern Overlay -->
+    <!-- <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-[10%] left-[20%] w-[8vw] h-[8vw] bg-white rounded-full blur-3xl"></div>
+        <div class="absolute bottom-[20%] right-[10%] w-[10vw] h-[10vw] bg-teal-300 rounded-full blur-3xl"></div>
+    </div> -->
+
+    <div class="relative p-[1vw]">
+        
+        <!-- Header Section -->
+        <div class="flex items-center justify-between mb-[1vw]">
+            <div class="flex items-center gap-[0.5vw]">
+                <div class="w-[2vw] h-[2vw] bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
+                    <svg class="w-[1vw] h-[1vw] text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-[1vw]">Quick Find</h2>
+                    <p class="text-emerald-100 text-[0.6vw]">Search anything</p>
+                </div>
+            </div>
+            <button id="closeSearchModal" class="w-[1.8vw] h-[1.8vw] bg-white/90 hover:bg-white rounded-full flex items-center justify-center transition-all hover:rotate-90 duration-300 cursor-pointer group">
+                <svg class="w-[0.8vw] h-[0.8vw] text-teal-600 group-hover:text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Search Input Container -->
+        <div class="relative group">
+            <div class="absolute inset-0  rounded-[0.8vw] blur-sm opacity-50 group-hover:opacity-70 transition-opacity"></div>
+            <div class="relative flex items-center bg-white rounded-[0.8vw] overflow-hidden ">
+                <div class="pl-[1vw] text-teal-600">
+                    <svg class="w-[1vw] h-[1vw]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </div>
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Type your query here..." 
+                    class="flex-1 outline-none text-gray-700 px-[0.8vw] py-[0.6vw] text-[0.75vw] w-[9vw] h-[2.5vw] placeholder:text-gray-400 font-medium"
+                    autocomplete="off"
+                />
+                <button id="SearchModal" class="h-[2.5vw] px-[.5vw] bg-gradient-to-r from-teal-800 to-teal-800 hover:from-teal-600 hover:to-teal-500 text-white font-semibold text-[0.7vw] transition-all duration-300 cursor-pointer flex items-center gap-[0.3vw] group">
+                    <span>Search</span>
+                    <svg class="w-[0.8vw] h-[0.8vw] group-hover:translate-x-[0.2vw] transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Quick Filters -->
+        <div class="mt-[1vw] hidden flex gap-[0.4vw]">
+            <button class="px-[0.8vw] py-[0.3vw] bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white text-[0.6vw] rounded-full border border-white/30 transition-all cursor-pointer">
+                All
+            </button>
+            <button class="px-[0.8vw] py-[0.3vw] bg-white/10 backdrop-blur-sm hover:bg-white/30 text-white/80 hover:text-white text-[0.6vw] rounded-full border border-white/20 transition-all cursor-pointer">
+                Recent
+            </button>
+            <button class="px-[0.8vw] py-[0.3vw] bg-white/10 backdrop-blur-sm hover:bg-white/30 text-white/80 hover:text-white text-[0.6vw] rounded-full border border-white/20 transition-all cursor-pointer">
+                Popular
+            </button>
+        </div>
+
+        <!-- Divider -->
+        <div class="my-[1vw] hidden h-[0.1vw] bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+
+        <!-- Search Results Container -->
+        <div class="bg-white/10 hidden backdrop-blur-sm rounded-[0.8vw] p-[1vw] min-h-[20vw] max-h-[35vw] overflow-y-auto custom-scrollbar">
+            <div id="searchResults" class="space-y-[0.5vw]">
+                <!-- Initial State -->
+                <div class="text-center py-[5vw]">
+                    <div class="w-[4vw] h-[4vw] mx-auto mb-[1vw] bg-white/20 rounded-full flex items-center justify-center">
+                        <svg class="w-[2vw] h-[2vw] text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <p class="text-white/80 text-[0.8vw] font-medium">Start typing to discover</p>
+                    <p class="text-white/60 text-[0.6vw] mt-[0.3vw]">Quick search across all content</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Stats -->
+        <div class="mt-[1vw] hidden flex items-center justify-between px-[0.5vw]">
+            <span class="text-white/60 text-[0.6vw]">0 results</span>
+            <span class="text-white/60 text-[0.6vw]">Press ESC to close</span>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Custom Scrollbar for Search Results */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 0.3vw;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.5vw;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 0.5vw;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+</style>
+  </div>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+
+  <script type="text/javascript">
+    // Change these settings
+
+    gsap.config({
+      nullTargetWarn: false
+    });
+let windowWidth = window.innerWidth;
+let windowHeight = window.innerHeight;
+
+const normal = { width: 1300, height: 800 };
+
+const heightLower = (windowHeight >= 700) ? 690 : 550;
+const widthLower  = (windowHeight >= 700) ? 1100 : 900;
+
+const lower = { width: widthLower, height: heightLower };
+
+// 📱 MOBILE — increase both width & height
+const mobile = {
+  width: 800 ,   // 98% screen width
+  height: 570  // 95% screen height
+};
+
+// choose correct size
+let crctSize;
+if (windowWidth <= 768) {
+ 
+  crctSize = mobile;
+    // alert(`Mobile size\nWidth: ${crctSize.width}px\nHeight: ${crctSize.height}px`);
+} else if (windowWidth > 1280) {
+  crctSize = normal;
+} else {
+  crctSize = lower;
+}
+
+
+
+
+
+    console.log('correct width: ', crctSize.width);
+    console.log('correct height: ', crctSize.height);
+FlipbookSettings = {
+  options: {
+    width: crctSize.width,
+    height: crctSize.height,
+    autoCenter: true,
+    pages: 16,
+    when: {
+      turning: function () {
+        document.getElementById("flipaudio")?.play();
+      }
+    }
+  }
+};
+
+if (windowWidth <= 768) {
+  const el = document.querySelector(".catalog-app");
+  if (el) {
+    el.style.width = "100vw";
+    el.style.height = "100vh";
+    el.style.maxWidth = "100%";
+  }
+}
+
+
+
+const fsBtn = document.getElementById("full-screen-btn");
+
+const fullIcon = "../global assets/icons/full-screen-icon.svg";
+const exitIcon = "../global assets/icons/normal-screen-icon.svg"; // <-- add correct path
+
+let isFullscreen = false;
+
+$('.full-screen').on('click', function () {
+    isFullscreen = !isFullscreen;
+    fsBtn.src = isFullscreen ? exitIcon : fullIcon;
+
+    window.parent.postMessage({ action: "toggleFullscreen" }, "*");
+});
+
+$(document).on('keydown', function(event) {
+  console.log('Key pressed:', event.key);
+    if ((event.key === 'Escape' || event.keyCode === 27) && isFullscreen) {
+        isFullscreen = false;
+        fsBtn.src = fullIcon;
+        window.parent.postMessage({ action: "toggleFullscreen" }, "*");
+    }
+});
+
+
+    
+
+    $('#flipbook').bind('turning', function (event, page, view) {
+      resetPageImages(); // Clear or reset before the page turns
+    });
+
+
+
+   
+ $('#flipbook').bind('turning', function (event, page, view) {
+
+  const isMobile = window.innerWidth <= 768;
+  
+  resetPageImages(); // Clear animations before page turns
+  
+  console.log("Page turned to:", page, "Mobile:", isMobile);
+  
+  // ============== Page 1 - Home ==============
+  if (page === 1) {
+
+  }
+  
+  // ============== Page 2-3 - About Us & Table of Contents ==============
+  if (page === 2 || page === 3) {
+
+  }
+  
+  // ============== Page 4-5 - Round Containers ==============
+  if (page === 4 || page === 5) {
+
+  }
+  if (page === 4) {
+
+  }
+  
+  // ============== Page 6-7 - Round Square ==============
+  if (page === 6 || page === 7) {
+
+  }
+  if (page === 6) {
+
+  }
+  
+  // ============== Page 8-9 - Oval ==============
+  if (page === 8 || page === 9) {
+
+  } 
+  if (page === 8 ) {
+
+  }
+  
+  // ============== Page 10-11 - SweetBox ==============
+  if (page === 10 || page === 11) {
+
+  }
+  if (page === 10) {
+
+  }
+  
+  // ============== Page 12-13 - SweetBox 4-Side IML ==============
+if (page === 12 || page === 13) {
+
+}
+if (page === 12) {  // ✅ Only on FIRST page of spread
+
+}
+
+// ============== Page 14-15 - SweetBox 5-Side IML ==============
+if (page === 14 || page === 15) {
+ 
+}
+if (page === 14) {  // ✅ Only on FIRST page of spread
+  
+}
+  
+  // ============== Page 14-15 - Tub ==============
+  if (page === 16 || page === 17) {
+    
+    
+  }
+  if (page === 16) {
+    
+  } else {
+    
+  }
+  
+  // ============== Page 16 - Contact Us ==============
+  if (page === 18) {
+  
+  }
+  
+  // Update page counter
+  updateActiveThumbnail(page);
+});
+
+
+ function resetPageImages() {
+      // const allAnimatedImages = document.querySelectorAll("[data-image-animation], [data-3d-image-animation]");
+      const allAnimatedImages = document.querySelectorAll(".up-img, .down-img, .right-img, .left-img,  .page-1-left, .page-1-right, .page-1-up, .page-1-down, .page-2-left, .page-2-right, .page-2-up, .page-2-down, .popup_images3, .page-8-left, .page-8-right, .page-8-up, .page-8-down, .popup_images8, .popup_images10, .page-10-left, .page-10-left-2, .page-10-right, .page-10-up");
+      allAnimatedImages.forEach((img) => {
+        gsap.set(img, {
+          opacity: 0,
+          x: 0,
+          y: 0,
+          scale: 1
+        });
+      });
+      gsap.set('.up-img, .down-img, .right-img, .left-img, .page-1-left, .page-1-right, .page-1-up, .page-1-down, .page-2-left, .page-2-right, .page-2-up, .page-2-down, .popup_images3, .page-8-left, .page-8-right, .page-8-up, .page-8-down, .popup_images8, .popup_images10, .page-10-left, .page-10-left-2, .page-10-right, .page-10-up', { opacity: 0 });
+    }
+
+       function Page1LeftAnimation() {
+      gsap.fromTo(
+        ".page-1-left",
+        { opacity: 0, x: -80 },   // start: hidden + shifted to the right
+        {
+          opacity: 1,
+          x: 0,                  // move to normal position
+          duration: 1,
+          stagger: 0.5,          // reveal one by one if multiple
+          ease: "power3.out"
+        }
+      );
+    }
+
+          function Page1RightAnimation() {
+      gsap.fromTo(
+        ".page-1-right",
+        { opacity: 0, x: 80 },   // start: hidden + shifted to the right
+        {
+          opacity: 1,
+          x: 0,                  // move to normal position
+          duration: 2,
+          stagger: 0.5,          // reveal one by one if multiple
+          ease: "power3.out"
+        }
+      );
+    }
+    function Page1UpAnimation() {
+      gsap.fromTo(
+        ".page-1-up",
+        { opacity: 0, y: -80 },   // start: hidden + shifted to the right
+        {
+          opacity: 1,
+          y: 0,                  // move to normal position
+          duration: 1,
+          stagger: 0.1,          // reveal one by one if multiple
+          ease: "power3.out"
+        }
+      );
+    }
+
+    function Page1DownAnimation() {
+      gsap.fromTo(
+        ".page-1-down",
+        { opacity: 0, y: 80 },   // start: hidden + shifted to the right
+        {
+          opacity: 1,
+          y: 0,                  // move to normal position
+          duration: 1,
+          stagger: 0.1,          // reveal one by one if multiple
+          ease: "power3.out"
+        }
+      );
+    }
+
+       function Page2LeftAnimation() {
+      gsap.fromTo(
+        ".page-2-left",
+        { opacity: 0, x: -80 },   // start: hidden + shifted to the right
+        {
+          opacity: 1,
+          x: 0,                  // move to normal position
+          duration: 1.5,
+          stagger: 0.5,          // reveal one by one if multiple
+          ease: "power3.out"
+        }
+      );
+    }
+
+          function Page2RightAnimation() {
+      gsap.fromTo(
+        ".page-2-right",
+        { opacity: 0, x: 80 },   // start: hidden + shifted to the right
+        {
+          opacity: 1,
+          x: 0,                  // move to normal position
+          duration: 1.5,
+          stagger: 0.5,          // reveal one by one if multiple
+          ease: "power3.out"
+        }
+      );
+    }
+    function Page2UpAnimation() {
+      gsap.fromTo(
+        ".page-2-up",
+        { opacity: 0, y: -80 },   // start: hidden + shifted to the right
+        {
+          opacity: 1,
+          y: 0,                  // move to normal position
+          duration: 1.5,
+          stagger: 0.5,          // reveal one by one if multiple
+          ease: "power3.out"
+        }
+      );
+    }
+
+    function Page2DownAnimation() {
+      gsap.fromTo(
+        ".page-2-down, .page-2-down-2", 
+        { opacity: 0, y: 80 },   // start: hidden + shifted to the right
+        {
+          opacity: 1,
+          y: 0,                  // move to normal position
+          duration: 1,
+          stagger: 0.5,          // reveal one by one if multiple
+          ease: "power3.out"
+        },
+        
+      );
+
+       gsap.fromTo(
+        " .page-2-down-2", 
+        { opacity: 0, y: 80 },   // start: hidden + shifted to the right
+        {
+          opacity: 1,
+          y: 0,                  // move to normal position
+          duration: 1,
+          stagger: 0.5,          // reveal one by one if multiple
+          ease: "power3.out"
+        },
+        
+      );
+    
+    }
+      function page3Animation() {
+      // console.log("Page 2 animation running");
+      gsap.fromTo('.popup_images3',
+        { opacity: 0, scale: 0.5 },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 0.75,
+          stagger: 0.1,
+          ease: "power3.out"
+        }
+      );
+   
+    }
+
+      function Page8LeftAnimation() {
+      gsap.fromTo(
+        ".page-8-left",
+        { opacity: 0, x: -80 },   // start: hidden + shifted to the right
+        {
+          opacity: 1,
+          x: 0,                  // move to normal position
+          duration: 1,
+          stagger: 0.5,          // reveal one by one if multiple
+          ease: "power3.out"
+        }
+      );
+    }
+
+          function Page8RightAnimation() {
+      gsap.fromTo(
+        ".page-8-right",
+        { opacity: 0, x: 80 },   // start: hidden + shifted to the right
+        {
+          opacity: 1,
+          x: 0,                  // move to normal position
+          duration: 2,
+          stagger: 0.5,          // reveal one by one if multiple
+          ease: "power3.out"
+        }
+      );
+    }
+    function Page8UpAnimation() {
+      gsap.fromTo(
+        ".page-8-up",
+        { opacity: 0, y: -80 },   // start: hidden + shifted to the right
+        {
+          opacity: 1,
+          y: 0,                  // move to normal position
+          duration: 1,
+          stagger: 0.1,          // reveal one by one if multiple
+          ease: "power3.out"
+        }
+      );
+    }
+
+    function Page8DownAnimation() {
+      gsap.fromTo(
+        ".page-8-down",
+        { opacity: 0, y: 80 },   // start: hidden + shifted to the right
+        {
+          opacity: 1,
+          y: 0,                  // move to normal position
+          duration: 1,
+          stagger: 0.1,          // reveal one by one if multiple
+          ease: "power3.out"
+        }
+      );
+    }
+    
+
+      function page8Animation() {
+      // console.log("Page 2 animation running");
+      gsap.fromTo('.popup_images8',
+        { opacity: 0, scale: 0.5 },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 0.75,
+          stagger: 0.1,
+          ease: "power3.out"
+        }
+      );
+    }
+   
+    function page10Animation() {
+      // console.log("Page 2 animation running");
+      gsap.fromTo('.popup_images10',
+        { opacity: 0, scale: 0.5 },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 0.75,
+          stagger: 0.1,
+          ease: "power3.out"
+        }
+      );
+    }
+
+      function Page10LeftAnimation() {
+      gsap.fromTo(
+        ".page-10-left",
+        { opacity: 0, x: -80 },   // start: hidden + shifted to the right
+        {
+          opacity: 1,
+          x: 0,                  // move to normal position
+          duration: 1,
+          stagger: 0.5,          // reveal one by one if multiple
+          ease: "power3.out"
+        }
+      );
+    }
+
+      function Page10Left2Animation() {
+      gsap.fromTo(
+        ".page-10-left-2",
+        { opacity: 0, x: -100 },   // start: hidden + shifted to the right
+        {
+          opacity: 1,
+          x: 0,                  // move to normal position
+          duration: 1.5,
+          stagger: 0.1,          // reveal one by one if multiple
+          ease: "power3.out"
+        }
+      );
+    }
+          function Page10RightAnimation() {
+      gsap.fromTo(
+        ".page-10-right",
+        { opacity: 0, x: 80 },   // start: hidden + shifted to the right
+        {
+          opacity: 1,
+          x: 0,                  // move to normal position
+          duration: 1.9,
+          stagger: 0.1,          // reveal one by one if multiple
+          ease: "power3.out"
+        }
+      );
+    }
+    function Page10UpAnimation() {
+      gsap.fromTo(
+        ".page-10-up",
+        { opacity: 0, y: -80 },   // start: hidden + shifted to the right
+        {
+          opacity: 1,
+          y: 0,                  // move to normal position
+          duration: 1.5,
+          stagger: 0.5,          // reveal one by one if multiple
+          ease: "power3.out"
+        }
+      );
+    }
+
+
+     function Page5RightAnimation() {
+      gsap.fromTo(
+        ".page-5-right",
+        { opacity: 0, x: 80 },   // start: hidden + shifted to the right
+        {
+          opacity: 1,
+          x: 0,                  // move to normal position
+          duration: 0.5,
+          stagger: 0.1,          // reveal one by one if multiple
+          ease: "power3.out"
+        }
+      );
+    }
+
+    function Page5UpAnimation() {
+      gsap.fromTo(
+        ".page-5-up",
+        { opacity: 0, y: 80 },   // start: hidden + shifted to the right
+        {
+          opacity: 1,
+          y: 0,                  // move to normal position
+          duration: 0.5,
+          stagger: 0.1,          // reveal one by one if multiple
+          ease: "power3.out"
+        }
+      );
+    }
+    function Page5LeftAnimation() {
+      gsap.fromTo(
+        ".page-5-left",
+        { opacity: 0, x: -80 },   // start: hidden + shifted to the right
+        {
+          opacity: 1,
+          x: 0,                  // move to normal position
+          duration: 0.5,
+          stagger: 0.1,          // reveal one by one if multiple
+          ease: "power3.out"
+        }
+      );
+    }
+
+
+    function DownAnimation() {
+      gsap.fromTo(
+        ".down-img",
+        { opacity: 0, y: 80 },   // start: hidden + shifted to the right
+        {
+          opacity: 1,
+          y: 0,                  // move to normal position
+          duration: 1.5,
+          stagger: 0.1,          // reveal one by one if multiple
+          ease: "power3.out"
+        }
+      );
+    }
+
+    function UpAnimation() {
+      gsap.fromTo(
+        ".up-img",
+        { opacity: 0, y: -80 },   // start: hidden + shifted to the right
+        {
+          opacity: 1,
+          y: 0,                  // move to normal position
+          duration: 1.5,
+          stagger: 0.1,          // reveal one by one if multiple
+          ease: "power3.out"
+        }
+      );
+    }
+
+    function RightAnimation() {
+      gsap.fromTo(
+        ".right-img",
+        { opacity: 0, x: 80 },   // start: hidden + shifted to the right
+        {
+          opacity: 1,
+          x: 0,                  // move to normal position
+          duration: 1.5,
+          stagger: 0.1,          // reveal one by one if multiple
+          ease: "power3.out"
+        }
+      );
+    }
+
+    function LeftAnimation() {
+      gsap.fromTo(
+        ".left-img",
+        { opacity: 0, x: -80 },   // start: hidden + shifted to the right
+        {
+          opacity: 1,
+          x: 0,                  // move to normal position
+          duration: 1.5,
+          stagger: 0.1,          // reveal one by one if multiple
+          ease: "power3.out"
+        }
+      );
+    }
+    function resetPageImages() {
+      gsap.set('.services_grid_main img, .slide_up_image, .fade_in_images, .popup', { opacity: 0 });
+    }
+
+  </script>
+
+  
+
+  <script>
+    // document.getElementById("location-1").addEventListener("click", () => {
+    //   // Replace with your actual Google Maps link
+    //   window.open("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d489.88137527185336!2d78.7209976891742!3d10.807405811678224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52650c018a8c55%3A0x8004fa28a01c43f9!2sEco%20Energy%20Trichy!5e0!3m2!1sen!2sin!4v1770356108595!5m2!1sen!2sin", "_blank");
+    // });
+document.querySelectorAll("#location-1, #location-2, #location-3")
+  .forEach(el => {
+    el.addEventListener("click", () => {
+  
+
+      const placeName = "Eco Energy Trichy";
+
+      const mapUrl = `https://maps.app.goo.gl/E9n6XqfbP5y4ohVp9`;
+
+      window.open(mapUrl, "_blank");
+    });
+  });
+
+
+  </script>
+
+  <!-- <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.2.0/model-viewer.min.js  "></script>  -->
+    
+ <script>
+$(document).ready(function () {
+    var isMobile = $(window).width() < 768;
+
+    if (isMobile) {
+        // Block drag/corner flip on pages only, not on controls
+        $('#flipbook').on('touchstart touchmove', '.page-wrapper, .page', function (e) {
+            var $target = $(e.target);
+
+            // Allow if the target is (or inside) a control
+            var isControl =
+                $target.is('#nextPage, #prevPage, .flip-next, .flip-prev, button ') ||
+                $target.closest('#nextPage, #prevPage, .flip-next, .flip-prev, button').length > 0;
+
+            if (!isControl) {
+                if (e.type === 'touchmove') {
+                    e.preventDefault();
+                }
+                e.stopPropagation();
+                return false;
+            }
+           
+        });
+    }
+});
+
+ 
+</script>
+ 
+ 
+  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  document.querySelectorAll(
+    ' .contact-link'
+  ).forEach(el => {
+    el.style.pointerEvents = 'auto';
+    el.style.touchAction = 'manipulation';
+    el.style.zIndex = '9999';
+
+    // Stop flipbook swipe from blocking taps
+    el.addEventListener('touchstart', e => {
+      e.stopPropagation();
+    }, { passive: true });
+  });
+
+});
+
+</script>
+
+
+</body>
+
+
+</html>

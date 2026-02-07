@@ -1,0 +1,808 @@
+
+#navMenuBarMobile {display: none;}
+
+@media screen and (max-width: 768px) {
+
+  #navContainerMain {
+    height: 7%;
+    position: fixed;
+    z-index: 998;
+  }
+
+  #navMenuBarMobile {
+    display: block;
+    position: absolute;
+    right: 3%;
+    top: 47%;
+    width: 9%;
+    z-index: 99;
+    cursor: pointer;
+  }
+  
+  #shareBtn, #navToggle1, #download-btn, #musicOnImg, #musicOffImg, .bgm-container, #searchIconDesktop, .shadow-img {
+    display: none;
+  }
+
+  .social-icon{
+    height: 2%;
+  }
+  .social-icon-insta{
+    height: 2.8%;
+  }
+}
+
+
+
+@media screen and (min-width: 600px) and (max-width: 834px) {
+
+  #navContainerMain {
+    height: 7%;
+    position: fixed;
+    z-index: 998;
+  }
+
+  #navMenuBarMobile {
+    display: block;
+    position: absolute;
+    right: 3%;
+    top: 47%;
+    width: 6%;
+    z-index: 99;
+    cursor: pointer;
+  }
+  
+  #shareBtn, #navToggle1, #download-btn, #musicOnImg, #musicOffImg, .bgm-container, #searchIconDesktop, .zoom-control-container, #full-screen-btn, .page-no {
+    display: none;
+  }
+/* 
+  #goToPage1{
+    width: 5vw;
+  } */
+  .social-icon{
+    height: 2%;
+  }
+  .social-icon-insta{
+    height: 2.9%;
+  }
+}
+
+/* overlay container */
+.nav-mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* when visible */
+.nav-mobile-overlay--visible {
+  display: flex;
+}
+
+/* blurred dark background */
+.nav-mobile-overlay__backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+}
+
+/* vertical buttons panel */
+.nav-mobile-overlay__panel {
+  position: absolute;
+  right: 3%;
+  top: 50%;
+  transform: translateY(-50%) translateX(120%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1;
+  opacity: 0;
+}
+
+/* slide‑in animation */
+.nav-mobile-overlay--visible .nav-mobile-overlay__panel {
+  animation: navPanelSlideIn 260ms ease-in-out forwards;
+}
+
+@keyframes navPanelSlideIn {
+  from {
+    transform: translateY(-50%) translateX(120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-50%) translateX(0%);
+    opacity: 1;
+  }
+}
+
+/* icon styles */
+.nav-mobile-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transform: scale(0.9);
+  transition: transform 160ms ease-out;
+}
+
+/* small pop on show / tap */
+.nav-mobile-overlay--visible .nav-mobile-icon {
+  transform: scale(1);
+}
+
+.nav-mobile-icon:active {
+  transform: scale(0.93);
+} 
+
+.hidden-controls, #controls {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 🔥 SWEETBOX OVAL ANIMATIONS - REQUIRED */
+@keyframes sweetboxFadeOut {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.95); }
+}
+
+@keyframes sweetboxSlideInNext {
+    0% { opacity: 0; transform: translate(100px, -100px) scale(0.9); }
+    100% { opacity: 1; transform: translate(0, 0) scale(1); }
+}
+
+@keyframes sweetboxSlideInPrev {
+    0% { opacity: 0; transform: translate(-100px, 100px) scale(0.9); }
+    100% { opacity: 1; transform: translate(0, 0) scale(1); }
+}
+
+.sweetbox-fade-out {
+    animation: sweetboxFadeOut 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+}
+
+.sweetbox-slide-in-next {
+    animation: sweetboxSlideInNext 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
+}
+
+.sweetbox-slide-in-prev {
+    animation: sweetboxSlideInPrev 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
+}
+
+#sweetboxNextBtn, #sweetboxPrevBtn {
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+}
+
+#sweetboxNextBtn:hover, #sweetboxPrevBtn:hover {
+    transform: scale(1.08) !important;
+    filter: brightness(1.15) !important;
+}
+
+
+
+/* **************************************************************************************************  */
+
+
+
+/* ====================================================================
+   Sweet Box 4 Side IML - Custom Animations
+   Container: Bottom to Top
+   Text/Content: Top to Bottom
+====================================================================  */
+/* Fade Out Animation */
+@keyframes sb4FadeOut {
+  0% { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
+  100% { 
+    opacity: 0; 
+    transform: translateY(0);
+  }
+}
+
+/* Container Image - Comes from Bottom, Goes to Bottom */
+@keyframes sb4ContainerFromBottom {
+  0% { 
+    opacity: 0; 
+    transform: translateY(100px);
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
+}
+
+@keyframes sb4ContainerToBottom {
+  0% { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
+  100% { 
+    opacity: 0; 
+    transform: translateY(100px);
+  }
+}
+
+/* Text/Content - Comes from Top, Goes to Top */
+@keyframes sb4ContentFromTop {
+  0% { 
+    opacity: 0; 
+    transform: translateY(-80px);
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
+}
+
+@keyframes sb4ContentToTop {
+  0% { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
+  100% { 
+    opacity: 0; 
+    transform: translateY(-80px);
+  }
+}
+
+/* Background - NO ANIMATION, just instant swap */
+.sb4-bg-swap {
+  opacity: 1 !important;
+  transition: none !important;
+}
+
+/* Apply Classes */
+.sb4-fade-out {
+  animation: sb4FadeOut 0.4s ease-out forwards !important;
+}
+
+.sb4-container-from-bottom {
+  animation: sb4ContainerFromBottom 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
+}
+
+.sb4-container-to-bottom {
+  animation: sb4ContainerToBottom 0.5s ease-in forwards !important;
+}
+
+.sb4-content-from-top {
+  animation: sb4ContentFromTop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
+}
+
+.sb4-content-to-top {
+  animation: sb4ContentToTop 0.5s ease-in forwards !important;
+}
+
+/* Button Styles */
+#sb4NextBtn, #sb4PrevBtn {
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  will-change: transform !important;
+  pointer-events: auto;
+  touch-action: manipulation;
+}
+
+#sb4NextBtn:hover, #sb4PrevBtn:hover {
+  transform: scale(1.08) !important;
+  filter: brightness(1.15) !important;
+}
+
+#sb4NextBtn:active, #sb4PrevBtn:active {
+  transform: scale(0.95) !important;
+}
+
+[data-sb4] {
+  will-change: transform, opacity !important;
+}
+
+/* Stagger Animation Delays */
+.sb4-stagger-1 {
+  animation-delay: 0s !important;
+}
+
+.sb4-stagger-2 {
+  animation-delay: 0.1s !important;
+}
+
+.sb4-stagger-3 {
+  animation-delay: 0.2s !important;
+}
+
+.sb4-stagger-4 {
+  animation-delay: 0.3s !important;
+}
+
+.sb4-stagger-5 {
+  animation-delay: 0.4s !important;
+}
+/* ====================================================================
+   Sweet Box 5 Side IML Animations
+==================================================================== */
+/* ====================================================================
+   Sweet Box 5 Side IML - Custom Animations
+   Left Side Icons: Left to Right
+   Right Side Icons: Right to Left
+   Center Image: Zoom In/Out (Popup Effect)
+   Bottom Text: Bottom to Top
+==================================================================== */
+/* Fade Out Animation */
+@keyframes sb5FadeOut {
+  0% { 
+    opacity: 1; 
+  }
+  100% { 
+    opacity: 0; 
+  }
+}
+
+/* Left Side - Comes from Left, Goes to Left */
+@keyframes sb5LeftFromLeft {
+  0% { 
+    opacity: 0; 
+    transform: translateX(-100px);
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateX(0);
+  }
+}
+
+@keyframes sb5LeftToLeft {
+  0% { 
+    opacity: 1; 
+    transform: translateX(0);
+  }
+  100% { 
+    opacity: 0; 
+    transform: translateX(-100px);
+  }
+}
+
+/* Right Side - Comes from Right, Goes to Right */
+@keyframes sb5RightFromRight {
+  0% { 
+    opacity: 0; 
+    transform: translateX(100px);
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateX(0);
+  }
+}
+
+@keyframes sb5RightToRight {
+  0% { 
+    opacity: 1; 
+    transform: translateX(0);
+  }
+  100% { 
+    opacity: 0; 
+    transform: translateX(100px);
+  }
+}
+
+/* Center Image - Zoom In (Popup), Zoom Out */
+@keyframes sb5CenterZoomIn {
+  0% { 
+    opacity: 0; 
+    transform: scale(0.5);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% { 
+    opacity: 1; 
+    transform: scale(1);
+  }
+}
+
+@keyframes sb5CenterZoomOut {
+  0% { 
+    opacity: 1; 
+    transform: scale(1);
+  }
+  100% { 
+    opacity: 0; 
+    transform: scale(0.5);
+  }
+}
+
+/* Bottom Text - Comes from Bottom, Goes to Bottom */
+@keyframes sb5BottomFromBottom {
+  0% { 
+    opacity: 0; 
+    transform: translateY(80px);
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
+}
+
+@keyframes sb5BottomToBottom {
+  0% { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
+  100% { 
+    opacity: 0; 
+    transform: translateY(80px);
+  }
+}
+
+/* Background - NO ANIMATION, just instant swap */
+.sb5-bg-swap {
+  opacity: 1 !important;
+  transition: none !important;
+}
+
+/* Apply Classes */
+.sb5-fade-out {
+  animation: sb5FadeOut 0.4s ease-out forwards !important;
+}
+
+/* Left Side Animations */
+.sb5-left-from-left {
+  animation: sb5LeftFromLeft 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
+}
+
+.sb5-left-to-left {
+  animation: sb5LeftToLeft 0.5s ease-in forwards !important;
+}
+
+/* Right Side Animations */
+.sb5-right-from-right {
+  animation: sb5RightFromRight 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
+}
+
+.sb5-right-to-right {
+  animation: sb5RightToRight 0.5s ease-in forwards !important;
+}
+
+/* Center Zoom Animations */
+.sb5-center-zoom-in {
+  animation: sb5CenterZoomIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
+  transform-origin: center !important;
+}
+
+.sb5-center-zoom-out {
+  animation: sb5CenterZoomOut 0.5s ease-in forwards !important;
+  transform-origin: center !important;
+}
+
+/* Bottom Animations */
+.sb5-bottom-from-bottom {
+  animation: sb5BottomFromBottom 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
+}
+
+.sb5-bottom-to-bottom {
+  animation: sb5BottomToBottom 0.5s ease-in forwards !important;
+}
+
+/* Button Styles */
+#sb5NextBtn, #sb5PrevBtn {
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  will-change: transform !important;
+  pointer-events: auto;
+  touch-action: manipulation;
+}
+
+#sb5NextBtn:hover, #sb5PrevBtn:hover {
+  transform: scale(1.08) !important;
+  filter: brightness(1.15) !important;
+}
+
+#sb5NextBtn:active, #sb5PrevBtn:active {
+  transform: scale(0.95) !important;
+}
+
+[data-sb5] {
+  will-change: transform, opacity !important;
+}
+
+/* Stagger Animation Delays */
+.sb5-stagger-1 {
+  animation-delay: 0s !important;
+}
+
+.sb5-stagger-2 {
+  animation-delay: 0.08s !important;
+}
+
+.sb5-stagger-3 {
+  animation-delay: 0.16s !important;
+}
+
+.sb5-stagger-4 {
+  animation-delay: 0.24s !important;
+}
+
+.sb5-stagger-5 {
+  animation-delay: 0.32s !important;
+}
+
+.sb5-stagger-6 {
+  animation-delay: 0.40s !important;
+}
+
+/* *********************************************************************************************** */
+
+
+
+.infinite-zoom {
+  animation: infiniteZoom 2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes infiniteZoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1); /* little zoom in */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* @media screen and (min-width: 799px) {
+  #dummyNext,
+#dummyPrev {display: none;}
+} */
+
+@media screen and (max-width: 768px) {
+  /* .next-arrow,
+.prev-arrow {
+  position: fixed;
+  bottom: 10%;
+  background: white;
+  color: black;
+  padding: 5%;
+  z-index: 999999999;
+}
+.prev-arrow {
+  left: 5%;
+}
+.next-arrow {
+  right: 5%;
+} */
+
+}
+
+/* ******************duplicate pages hide css code******************************  */
+   /* .hide-mobile {
+  background: red !important;
+} */
+
+/* Hide pages with hide-mobile class on tablets and mobile */
+@media screen and (max-width: 1024px) {
+    .hide-mobile {
+        display: none !important;
+    } 
+    .hide-mobile {
+  background: red !important;
+}
+
+.hide-mobile {
+  border: 5px solid red;
+}
+
+
+}
+
+/* Alternative: Hide only on mobile screens */
+@media screen and (max-width: 768px) {
+    .hide-mobile {
+        display: none !important;
+    }
+    .hide-mobile {
+  background: red !important;
+}
+.hide-mobile {
+  border: 5px solid red;
+}
+
+}
+
+
+
+/* **********************background animation code start*****************************  */
+/* 
+.catalog-app {
+  position: relative;
+  overflow: hidden;
+}
+
+
+.floating-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  grid-auto-rows: 80px;
+  place-items: center;
+}
+
+
+.float-item {
+  width: 60px;
+  opacity: 0.4;
+
+  animation: floatY 4s ease-in-out infinite;
+}
+
+
+.float-item:nth-child(odd) {
+  animation-duration: 5s;
+}
+.float-item:nth-child(even) {
+  animation-duration: 6s;
+}
+
+@media (max-width: 768px) {
+  .floating-layer {
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    grid-auto-rows: 60px;
+  }
+
+  .float-item {
+    width: 40px;
+  }
+}
+
+@keyframes floatY {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+ */
+
+
+.catalog-app {
+  position: relative;
+  overflow: hidden;
+}
+
+.floating-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.float-item {
+  position: absolute;
+  width: 60px;
+  opacity: 0.35;
+
+  animation: floatSoft ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  .float-item {
+    width: 40px;
+  }
+  .image-fade-wrapper{
+    height: 27% !important ;
+  }
+}
+
+@keyframes floatSoft {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+/* **********************background animation code end*****************************  */
+
+
+/* *************************About us Page Image Animation code********************* */
+
+.image-fade-wrapper {
+  position: absolute;
+}
+
+.fade-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  animation: fadeAnim 6s infinite;
+}
+
+.img-1 {
+  animation-delay: 0s;
+}
+
+.img-2 {
+  animation-delay: 3s;
+}
+
+@keyframes fadeAnim {
+  0%   { opacity: 0; }
+  10%  { opacity: 1; }
+  40%  { opacity: 1; }
+  50%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
+/* mobile screen shadow code  */
+
+
+/* Mobile screens only */
+@media (max-width: 767px) {
+  .mobile-left-shadow {
+    position: absolute;
+    left: -6%;
+    top: -9%;
+    height: 112%;
+    width: 16%;
+    z-index: 1111;
+    pointer-events: none;
+  }
+  .over-6-years-of-IML-img{
+    top: 59.5%;
+  }
+}
+
+/* Hide on tablet & desktop */
+@media (min-width: 768px) {
+  .mobile-left-shadow {
+    display: none;
+  }
+}
